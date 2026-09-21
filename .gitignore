@@ -1,0 +1,54 @@
+# Build output
+/build/
+/build-switch/
+/build-switch-headless/
+/build-headless/
+/build-switch-msys/
+/github-release/
+/tmp/
+/tests/*/build/
+/cmake-build-*/
+/host-file-to-c/
+/tools/
+/b-*/
+/out/
+/dist/
+
+# Runtime state written next to the executable (settings, saves, ROM copy)
+.runtime/
+
+# Local diagnostic captures and generated trace output
+.diagnostics/
+__pycache__/
+*.log
+wr64-water-sheet.csv
+CON
+
+# ROMs are never part of this repository
+*.z64
+*.n64
+*.v64
+*.rom
+*.sav
+*.eep
+*.mpk
+
+# Private credentials and local exports
+.env
+.env.*
+*.credentials
+*.pem
+*.key
+*.pdb
+*.dmp
+*.nro
+*.elf
+*.map
+
+# Editor / OS
+.vs/
+.vscode/
+.idea/
+*.user
+Thumbs.db
+.DS_Store
