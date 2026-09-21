@@ -23,7 +23,7 @@ The port uses **devkitPro/devkitA64**, **libnx**, **SDL2** for input/events and 
 
 The tested performance configuration disables diagnostics and was validated at the standard Switch clocks used during testing:
 
-- CPU: **1 GHz**
+- CPU: **1.7 GHz**
 - GPU: **300 MHz**
 - Memory: **1600 MHz**
 
