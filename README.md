@@ -8,7 +8,7 @@ The project has been under active development for many months. That time has gon
 
 > **v1.0.0 is available now.** [Download for Windows](https://github.com/DomazinUS/RaceWave46/releases/download/v1.0.0/RaceWave46-Windows-x64-v1.0.0.zip) · [Source and release notes](https://github.com/DomazinUS/RaceWave46/releases/tag/v1.0.0).
 
-[The original game](#the-original-game) · [Added features](#what-racewave46-adds) · [Graphics API support](#graphics-api-support) · [Getting started](#getting-started) · [AI assistance](#ai-assistance) · [Source and license](#source-and-license) · [Credits](#credits)
+[The original game](#the-original-game) · [Added features](#what-racewave46-adds) · [Graphics API support](#graphics-api-support) · [Getting started](#getting-started) · [Nintendo Switch port](#nintendo-switch-port) · [AI assistance](#ai-assistance) · [Source and license](#source-and-license) · [Credits](#credits)
 
 ## The original game
 
@@ -121,6 +121,20 @@ No game ROM, personal save, account credentials or installed texture packs are i
 
 For an update, keep your `.runtime` directory. Compatible texture packs can be installed through **Settings → Mods**. RetroAchievements sign-in is available under **Settings → Achievements**.
 
+## Nintendo Switch port
+
+The Nintendo Switch port is maintained by **[1weell](https://github.com/1weell)** as a separate ARM64 target of RaceWave46. It packages the recompiled game with **devkitPro/devkitA64**, **libnx**, **SDL2** for input/events and the **RT64 Vulkan/NVK** rendering path.
+
+The current tested build is the Release NRO in the repository root:
+
+**[Download `WaveRace64Recompiled.nro`](https://github.com/1weell/RaceWave46-Switch/blob/switch-port/WaveRace64Recompiled.nro)**
+
+To install it, copy the NRO to the Switch SD card under `sdmc:/switch/RaceWave46/` and launch it with hbmenu or Sphaira. The launcher still requires your own compatible **Wave Race 64 USA Rev 1** ROM; no ROM is included.
+
+This build was compiled as the performance configuration with diagnostics disabled. It was tested with the Switch at the standard clocks used for the validation run: **1 GHz CPU, 300 MHz GPU and 1600 MHz memory**. Performance can vary with firmware, renderer and thermal conditions.
+
+The port work includes the Switch window/bootstrap path, Vulkan surface setup, ARM64 runtime fixes, controller/input integration, Switch-safe startup handling, the `1weell` application identity and the build/package configuration for NRO output.
+
 ## AI assistance
 
 **RaceWave46 is an AI-assisted recompilation.** AI tools have been used for code implementation, debugging, research and documentation. Project direction, review decisions and hands-on gameplay testing remain my responsibility as the maintainer.
@@ -135,6 +149,8 @@ The source includes the modified dependencies and checked-in generated code need
 
 This project exists because of the tools, research and sustained work of the wider Nintendo 64 recompilation community.
 
+- **[1weell](https://github.com/1weell)** — Nintendo Switch port, ARM64/devkitPro integration, Vulkan/NVK bring-up, runtime fixes, performance build and hardware testing.
+- **[DomazinUS](https://github.com/DomazinUS)** — RaceWave46 project direction, original Windows port and upstream game integration.
 - **[Wiseguy / Mr-Wiseguy](https://github.com/Mr-Wiseguy)** — creator of **[N64Recomp](https://github.com/N64Recomp/N64Recomp)**, the static recompilation tool at the foundation of this project. Thanks also to its contributors and maintainers.
 - **[Darío / DarioSamo](https://github.com/DarioSamo), Wiseguy and the [RT64 contributors](https://github.com/rt64/rt64/graphs/contributors)** — for **[RT64](https://github.com/rt64/rt64)** and the rendering foundation that makes modern presentation and additional effects possible.
 - **The [N64ModernRuntime](https://github.com/N64Recomp/N64ModernRuntime) and [RecompFrontend](https://github.com/N64Recomp/RecompFrontend) contributors** — for the runtime, input and frontend infrastructure used by this project.
